@@ -1,0 +1,82 @@
+$hover-transition: 0.5s;
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin-top: auto;
+  margin-bottom: 65px;
+  @media (max-width: 500px) {
+    margin-bottom: 40px;
+  }
+  &-div {
+    position: relative;
+  }
+
+  .icon {
+    cursor: pointer;
+    + div {
+      position: absolute;
+      width: 100%;
+      height: 24px;
+      top: 0;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity $hover-transition;
+    }
+    path {
+      transition: fill $hover-transition;
+    }
+    &:hover {
+      + div {
+        opacity: 1;
+      }
+    }
+
+    &--facebook {
+      + div {
+        border-radius: 5px;
+        background-color: #fff;
+      }
+      &:hover {
+        path {
+          fill: #4267b2;
+        }
+      }
+    }
+
+    &--pinterest {
+      + div {
+        border-radius: 50%;
+        background-color: #fff;
+        transform: scale(0.93);
+      }
+
+      &:hover {
+        path {
+          fill: #e60023;
+        }
+      }
+    }
+
+    &--instagram {
+      + div {
+        border-radius: 8px;
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+      }
+
+      &:hover {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

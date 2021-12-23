@@ -1,0 +1,30 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  min-height: 700px;
+  width: 100%;
+  z-index: -1;
+  background-image: url('../assets/images/pattern-hills.svg'),
+    url('../assets/images/bg-stars.svg');
+  background-position: bottom center, top;
+  background-repeat: no-repeat;
+  background-size: 100% 24vh, 100%;
+
+  @media (max-height: 700px) {
+    background-size: 100% 170px, 100%;
+  }
+  @media (max-width: 825px) {
+    background-size: 100% 170px, auto 100%;
+  }
+  @media (max-width: 500px) {
+    min-height: 600px;
+    background-size: 275% 150px, auto 100%;
+    background-position: bottom right, top;
+  }
+
+  @media (max-width: 325px) {
+    min-height: 525px;
+  }
+}

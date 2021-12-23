@@ -41,7 +41,7 @@ const Countdown = () => {
     const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
-  }, [updateCountdown]);
+  }, []);
 
   const days = convertTime('day', totalMilliseconds);
   const upcomingDays = convertTime('day', totalMilliseconds - 1000);

@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import classes from '../../../styles/Main/Countdown/TimeBox.module.scss';
 
+const transformToTime = (number: number | undefined): string => {
+  return String(number).padStart(2, '0');
+};
+
 interface Props {
   unit: string;
   time: number | undefined;
@@ -11,12 +15,13 @@ const TimeBox = (props: Props) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeFrontDisplay = useRef<string>();
 
-  const timeBackDisplay = String(props.upcomingTime).padStart(2, '0');
+  const timeBackDisplay = transformToTime(props.upcomingTime);
+
   useEffect(() => {
-    timeFrontDisplay.current = String(props.time).padStart(2, '0');
+    timeFrontDisplay.current = transformToTime(props.time);
     setIsAnimating(true);
     const timeout = setTimeout(() => {
-      timeFrontDisplay.current = String(props.upcomingTime).padStart(2, '0');
+      timeFrontDisplay.current = transformToTime(props.upcomingTime);
       setIsAnimating(false);
     }, 750);
     return () => clearTimeout(timeout);

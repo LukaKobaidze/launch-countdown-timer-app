@@ -1,0 +1,25 @@
+$hover-transition: 0.5s;
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin-top: auto;
+  margin-bottom: 65px;
+  @media (max-width: 500px) {
+    margin-bottom: 40px;
+  }
+  &-div {
+    position: relative;
+  }
+
+  .icon {
+    cursor: pointer;
+    color: var(--cls-blue-primary);
+    transition: color 150ms ease-out;
+
+    &:hover {
+      color: var(--cls-red-primary);
+    }
+  }
+}
